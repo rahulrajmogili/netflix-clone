@@ -1,0 +1,29 @@
+.row__posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+  scrollbar-width: none;      /* this hides scrollbar in firefox since below class doesn't work on it */
+}
+
+.row__posters::-webkit-scrollbar {
+  display: none;
+}
+
+h2 {
+  align-content: left;
+  margin-left: 20px;
+}
+
+.row__poster {
+  object-fit: contain;
+  /* width: 100%; */
+  max-height: 250px;
+  transition: transform 450ms;
+  margin-right: 10px;
+  
+}
+
+.row__poster:hover {
+  transform: scale(1.10)
+}
