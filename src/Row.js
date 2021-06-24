@@ -8,30 +8,24 @@ function Row({ title, fetchURL }) {
 
 	useEffect(() => {
 		async function fetchData() {
-			const request = await axios.get(fetchURL);
-			if (request.status === 200) {
-				setMovies(request)
-			}
-			return request;
-		}
+			const request = await axios.get(fetchURL);	
+            setMovies(request.data.results)
+			return request
+        }
 		fetchData();
-	}, [fetchURL])
+	}, [fetchURL])		// fetchURL is used as a dependency to tell the useEffect that it is a variable outside the block
 
 	console.log(movies)
-
     return (
-        <div>
-			{/* Title */}
-			<h2>{title}</h2>
-
-			{/* Bunch of posters in a row */}
-			<div>
-				{/* {movies.map(movie => (
-					<img src={`${base_url}${movie.poster_path}`} alt="" />
-				))} */}
+			<div className="row">
+            <h2>{title}</h2>
+            
+            <div className="row__posters">
+                {movies.map(movie => (
+                    <img src={`${base_url}${movie.poster_path}`} alt={movie.name} />
+                ))}
+            </div>
 			</div>
-
-        </div>
     )
 }
 
