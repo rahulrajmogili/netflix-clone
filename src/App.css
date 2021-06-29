@@ -1,9 +1,16 @@
 .App {
   color: rgb(255, 255, 255);
-  background-color: #000000
+  background-color: #000000;
 }
 
 h1 {
-  margin: 0;
   text-align: center;
+}
+
+* {
+  margin: 0;
+}
+
+.logo__netflix {
+  max-height: 150px;
 }
